@@ -3,9 +3,9 @@ import datetime
 from tkinter import *
 import sys
 import os
-
+#字符串化当前时间
 time_now=str(datetime.datetime.now())
-
+#设定hap时间与当前时间格式化
 time_happy='2021-02-23 17:30:00'
 time_now=time_now[0:19]
 month='{:02d}'.format(datetime.datetime.now().month)
@@ -20,12 +20,9 @@ d2 = datetime.datetime.strptime(time_happy, '%Y-%m-%d %H:%M:%S')
 time_count=d2-d1
 
 
-print("当前时间：", time_now)
-print('相差的秒数：{}'.format(time_count.seconds))
 seconds=int(time_count.seconds)
 m, s = divmod(seconds, 60)
 h, m = divmod(m, 60)
-print("还有%d:%02d:%02d下班" % (h, m, s))
 combine_time=int(str(datetime.datetime.now().hour).zfill(2)+str(datetime.datetime.now().minute).zfill(2))
 
 
